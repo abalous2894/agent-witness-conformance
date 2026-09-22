@@ -10,7 +10,7 @@ AWC v0.1 is intentionally narrow: **witness integrity** only (hop set, bindings,
 git clone https://github.com/abalous2894/agent-witness-conformance.git
 cd agent-witness-conformance
 python -m venv .venv && source .venv/bin/activate
-pip install git+https://github.com/abalous2894/witnessdiff.git
+pip install git+https://github.com/abalous2894/witnessdiff.git@v1.0.0
 pip install -e ".[dev]"
 awc run-profile awc-v0.1
 ```
