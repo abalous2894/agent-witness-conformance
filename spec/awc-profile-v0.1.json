@@ -1,0 +1,33 @@
+{
+  "profile_id": "awc-v0.1",
+  "title": "Agent Witness Conformance Profile v0.1",
+  "status": "draft",
+  "published": "2026-09-22",
+  "wire_formats": {
+    "reference_trace": {
+      "schema_const": "witnessdiff.reference-trace/v1",
+      "json_schema": "spec/schemas/reference-trace.v1.schema.json"
+    },
+    "evidence_bundle": {
+      "schema_const": "witnessdiff.evidence-bundle/v1",
+      "json_schema": "spec/schemas/evidence-bundle.v1.schema.json"
+    }
+  },
+  "grader": {
+    "pipeline": ["awc_preflight_v0.1", "witnessdiff.compare_witness_integrity"],
+    "reference_implementation": {
+      "package": "agent-witness-conformance",
+      "cli": "awc verify",
+      "witnessdiff_min_version": "1.0.0"
+    },
+    "deterministic": true,
+    "llm_in_grading_path": false
+  },
+  "verdict_registry": "spec/awc-verdicts-v0.1.json",
+  "fixture_manifest": "fixtures/profiles/awc-v0.1/manifest.json",
+  "normative_notes": [
+    "AWC v0.1 does not define a parallel wire format. Exports MUST use witnessdiff.reference-trace/v1 and witnessdiff.evidence-bundle/v1.",
+    "Implementors MAY ship exporters; conformance is measured by this fixture suite and the documented grader pipeline.",
+    "AWC preflight rules are normative for INVALID_INPUT outcomes listed in awc-verdicts-v0.1.json."
+  ]
+}

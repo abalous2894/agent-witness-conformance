@@ -1,0 +1,21 @@
+{
+  "profile_id": "awc-v0.1",
+  "title": "Agent Witness Conformance v0.1 — witness-integrity vectors",
+  "cases": [
+    { "id": "awc-001-complete-path", "tags": ["happy_path"] },
+    { "id": "awc-002-silent-omission", "tags": ["completeness_overclaim"] },
+    { "id": "awc-003-declared-count-overclaim", "tags": ["completeness_overclaim"] },
+    { "id": "awc-004-partial-path-omission", "tags": ["witness_omission"] },
+    { "id": "awc-005-truncated-tail-omission", "tags": ["witness_omission"] },
+    { "id": "awc-006-extra-hop-in-export", "tags": ["export_truncation"] },
+    { "id": "awc-007-fabricated-export-hop", "tags": ["export_truncation"] },
+    { "id": "awc-008-reordered-tool-call", "tags": ["mismatch"] },
+    { "id": "awc-009-action-id-substitution", "tags": ["mismatch"] },
+    { "id": "awc-010-arguments-digest-mismatch", "tags": ["mismatch"] },
+    { "id": "awc-011-session-id-mismatch", "tags": ["invalid_input"] },
+    { "id": "awc-012-empty-actions-complete-claim", "tags": ["completeness_overclaim"] },
+    { "id": "awc-013-duplicate-action-id", "tags": ["invalid_input", "awc_preflight"] },
+    { "id": "awc-014-tool-name-at-index", "tags": ["mismatch"] },
+    { "id": "awc-015-middle-hop-only-export", "tags": ["completeness_overclaim"] }
+  ]
+}

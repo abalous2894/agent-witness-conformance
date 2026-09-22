@@ -1,0 +1,39 @@
+{
+  "profile_id": "awc-v0.1",
+  "verdicts": [
+    {
+      "code": "COMPLETE",
+      "meaning": "Evidence bundle attests the same hop set as the reference trace under the comparison rules."
+    },
+    {
+      "code": "WITNESS_OMISSION",
+      "meaning": "Reference contains hops not attested in evidence; completeness claim is not complete_path."
+    },
+    {
+      "code": "COMPLETENESS_OVERCLAIM",
+      "meaning": "Evidence claims complete_path (or mismatched declared_count) while omitting reference hops."
+    },
+    {
+      "code": "EXPORT_TRUNCATION",
+      "meaning": "Evidence attests hops absent from the reference trace."
+    },
+    {
+      "code": "MISMATCH",
+      "meaning": "Shared positions diverge by tool identity, action_id, arguments_digest, or order."
+    },
+    {
+      "code": "INVALID_INPUT",
+      "meaning": "Parse failure, session_id mismatch, or AWC preflight violation (duplicate action_id)."
+    }
+  ],
+  "awc_preflight_v0.1": {
+    "duplicate_action_id": {
+      "applies_to": ["reference.actions", "evidence.actions"],
+      "verdict": "INVALID_INPUT"
+    }
+  },
+  "reference_comparator": {
+    "implementation": "witnessdiff.compare_witness_integrity",
+    "documentation": "https://github.com/abalous2894/witnessdiff/blob/main/docs/methodology.md"
+  }
+}

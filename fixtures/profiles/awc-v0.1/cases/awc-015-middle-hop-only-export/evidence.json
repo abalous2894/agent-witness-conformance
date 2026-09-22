@@ -1,0 +1,15 @@
+{
+  "schema": "witnessdiff.evidence-bundle/v1",
+  "session_id": "demo-refund-001",
+  "source": "agent_platform_export",
+  "completeness_claim": "complete_path",
+  "actions": [
+    {
+      "index": 1,
+      "tool_name": "order_lookup",
+      "action_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "arguments_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+      "verdict": "ALLOW"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-witness-conformance"
+version = "0.1.0"
+description = "Conformance profiles and deterministic oracles for agent session evidence exports."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "Andrew Balous" }]
+keywords = [
+  "ai-agents",
+  "conformance",
+  "mcp",
+  "evidence-integrity",
+  "witness",
+  "audit",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+  "witnessdiff>=1.0.0",
+  "pydantic>=2.6,<3",
+  "typer>=0.12,<1",
+  "rich>=13.7,<14",
+  "jsonschema>=4.23,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+awc = "awc.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/abalous2894/agent-witness-conformance"
+Repository = "https://github.com/abalous2894/agent-witness-conformance"
+WitnessDiff = "https://github.com/abalous2894/witnessdiff"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/awc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
